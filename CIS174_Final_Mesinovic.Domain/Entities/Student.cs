@@ -8,6 +8,7 @@ namespace CIS174_Final_Mesinovic.Domain.Entities
 {
     public class Student
     {
+        public Guid StudentId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime? DateofBirth { get; set; }

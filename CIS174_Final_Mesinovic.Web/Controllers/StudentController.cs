@@ -23,10 +23,10 @@ namespace CIS174_Final_Mesinovic.Web.Controllers
             return students;
         }
         //GET: Student
-        public ActionResult ViewAllStudents()
+     /*   public ActionResult ViewAllStudents()
         {
             return View();
         }
-        
+        */
     }
 }

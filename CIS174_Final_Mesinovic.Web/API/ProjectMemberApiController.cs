@@ -9,7 +9,7 @@ using System.Web.Http;
 
 namespace CIS174_Final_Mesinovic.Web.API
 {
-    [Route("api/v1/members")]
+    [Route("api/v1/ProjectMembers")]
     public class ProjectMemberApiController : ApiController
     {
 
@@ -19,43 +19,12 @@ namespace CIS174_Final_Mesinovic.Web.API
                 _projectmemberorchestrator = new ProjectMemberOrchestrator();
             }
             [HttpGet]
-            public List<ProjectMemberViewModel> GetAllProjectMembers()
+            public List<ProjectMemberViewModel> GetAllMembers()
             {
-                var members = _projectmemberorchestrator.GetAllProjectMembers();
-                return members.ToList();
+            // members == 
+                var ProjectMembers = _projectmemberorchestrator.GetAllMembers();
+                return ProjectMembers.ToList();
             }
 
-
-
-            /* Default code - might need later 
-             * // GET api/<controller>
-            public IEnumerable<string> Get()
-            {
-                return new string[] { "value1", "value2" };
-            }
-
-            // GET api/<controller>/5
-            public string Get(int id)
-            {
-                return "value";
-            }
-
-            // POST api/<controller>
-            public void Post([FromBody]string value)
-            {
-            }
-
-            // PUT api/<controller>/5
-            public void Put(int id, [FromBody]string value)
-            {
-            }
-
-            // DELETE api/<controller>/5
-            public void Delete(int id)
-            {
-            }
-            */
-
-        
     }
 }

@@ -11,6 +11,9 @@ namespace CIS174_Final_Mesinovic.Domain
     public class SchoolContext : DbContext
     {
         public DbSet<Student> Students { get; set; }
+        // just add new set here
+        public DbSet<Person> ProjectMembers { get; set; }
+        public DbSet<HighScore> Leaderboard { get; set; }
 
     }
 }

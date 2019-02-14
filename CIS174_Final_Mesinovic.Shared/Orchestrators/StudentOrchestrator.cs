@@ -17,6 +17,7 @@ namespace CIS174_Final_Mesinovic.Shared.Orchestrators
             var students = _schoolContext.Students.Select(m => new StudentViewModel
             {
                 // left side = view model ; right side = database
+                StudentId = m.StudentId,
                 FirstName = m.FirstName,
                 LastName = m.LastName,
                 DateofBirth = m.DateofBirth,

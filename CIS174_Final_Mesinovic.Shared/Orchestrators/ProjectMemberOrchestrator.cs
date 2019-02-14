@@ -1,4 +1,5 @@
-﻿using CIS174_Final_Mesinovic.Shared.ViewModels;
+﻿using CIS174_Final_Mesinovic.Domain;
+using CIS174_Final_Mesinovic.Shared.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,30 +10,23 @@ namespace CIS174_Final_Mesinovic.Shared.Orchestrators
 {
     public class ProjectMemberOrchestrator
     {
-        /// keep this for later
-        /**  private readonly context _context;
-         public Orchestrator()
-         {
-             _context = new context();
-         }**/
-
-        /*            var members = _Context.members.Select(m => new ProjectMemberViewModel
+        private readonly SchoolContext _schoolContext;
+        public ProjectMemberOrchestrator()
         {
-            // left side = view model ; right side = database
-            FirstName = m.FirstName,
-
-        }).ToList();*/
-        public List<ProjectMemberViewModel> GetAllProjectMembers()
+            _schoolContext = new SchoolContext();
+        }
+        public List<ProjectMemberViewModel> GetAllMembers()
         {
-            var members = new List<ProjectMemberViewModel>
-                {
-                new ProjectMemberViewModel
-                    {
-                    Name = "Ben",
-                    Email = "Bme@Dmacc.edu",
-                    Role ="Student"
-                    }
-            }.ToList();
+            var members = _schoolContext.ProjectMembers.Select(m => new ProjectMemberViewModel
+            {
+                // left side = view model ; right side = database
+              FirstName=m.FirstName,
+              LastName=m.LastName,
+              Role=m.Role,
+              Email=m.Email,
+              DateCreated=m.DateCreated,
+              PersonId=m.PersonId
+            }).ToList();
             return members;
         }
     }

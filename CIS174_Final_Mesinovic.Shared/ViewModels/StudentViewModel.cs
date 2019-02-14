@@ -8,6 +8,7 @@ namespace CIS174_Final_Mesinovic.Shared.ViewModels
 {
     public class StudentViewModel
     {
+        public Guid StudentId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime? DateofBirth { get; set; }

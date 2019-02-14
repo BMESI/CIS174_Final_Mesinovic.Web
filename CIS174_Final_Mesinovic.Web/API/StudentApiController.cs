@@ -9,7 +9,6 @@ using System.Web.Http;
 
 namespace CIS174_Final_Mesinovic.Web.API
 {
-
     [Route("api/v1/students")]
     public class StudentApiController : ApiController
     {
