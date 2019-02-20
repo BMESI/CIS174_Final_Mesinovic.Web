@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Entities\HighScore.cs" />
     <Compile Include="Entities\Person.cs" />
+    <Compile Include="Entities\Player.cs" />
     <Compile Include="Entities\Student.cs" />
     <Compile Include="Migrations\201902140346451_InitialMigration.cs" />
     <Compile Include="Migrations\201902140346451_InitialMigration.Designer.cs">

@@ -60,6 +60,8 @@
     <Reference Include="System.Net.Http.Formatting, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -147,18 +149,21 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CheckersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LeaderboardsController.cs" />
-    <Compile Include="Controllers\LogInController.cs" />
     <Compile Include="Controllers\PlatformerController.cs" />
     <Compile Include="Controllers\ProjectMemberController.cs" />
     <Compile Include="Controllers\PuzzlersController.cs" />
-    <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\LogInAccountModel.cs" />
+    <Compile Include="Models\RegisterAccountModel.cs" />
+    <Compile Include="Models\StudentModel.cs" />
+    <Compile Include="Models\UpdateAccountModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -197,6 +202,7 @@
     <None Include="Properties\PublishProfiles\CIS174FinalBM - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\cis174mesinovic-cis174mesinovic - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\ExtraScripts\Validator.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -231,7 +237,6 @@
     <Content Include="Views\Leaderboards\ViewScores.cshtml" />
     <Content Include="Views\Platformer\PlatformerPage.cshtml" />
     <Content Include="Views\Puzzlers\PuzzlersPage.cshtml" />
-    <Content Include="Views\Registration\Register.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
@@ -241,13 +246,15 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\LogIn\LogIn.cshtml" />
     <Content Include="Views\ProjectMembers\About.cshtml" />
     <Content Include="Views\Student\ViewAllStudents.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\LogInAccount.cshtml" />
+    <Content Include="Views\Account\PlayerDashBoard.cshtml" />
+    <Content Include="Views\Account\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -255,6 +262,10 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CIS174_Final_Mesinovic.Domain\CIS174_Final_Mesinovic.Domain.csproj">
+      <Project>{8DE4866F-64FF-4A23-BA19-D8858C1786C2}</Project>
+      <Name>CIS174_Final_Mesinovic.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CIS174_Final_Mesinovic.Shared\CIS174_Final_Mesinovic.Shared.csproj">
       <Project>{28731089-2a17-472b-bee3-086b96a11f22}</Project>
       <Name>CIS174_Final_Mesinovic.Shared</Name>
@@ -265,6 +276,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

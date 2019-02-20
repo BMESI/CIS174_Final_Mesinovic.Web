@@ -14,6 +14,9 @@ namespace CIS174_Final_Mesinovic.Domain
         // just add new set here
         public DbSet<Person> ProjectMembers { get; set; }
         public DbSet<HighScore> Leaderboard { get; set; }
+        // add: player Dbset 2/14 
+        public DbSet<Player> Player { get; set; }
+
 
     }
 }
