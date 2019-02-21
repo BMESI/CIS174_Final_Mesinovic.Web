@@ -6,15 +6,15 @@
             searchstring: search
         }
     }).done(function (data) {
-        $("#personId").val(date.PersonId);
-        $("#FirstName").val(date.FirstName);
-        $("#LastName").val(date.LastName);
-        $("#Age").val(date.Age);
-        $("#Gender").val(date.Gender);
-        $("#Email").val(date.Email);
-        $("#PlayerName").val(date.PlayerName);
-        $("#Phone").val(date.Phone);
-        $("#UserPassword").val(date.UserPassword);
+        $("#personId").val(data.PersonId);
+        $("#FirstName").val(data.FirstName);
+        $("#LastName").val(data.LastName);
+        $("#Age").val(data.Age);
+        $("#Gender").val(data.Gender);
+        $("#Email").val(data.Email);
+        $("#PlayerName").val(data.PlayerName);
+        $("#Phone").val(data.Phone);
+        $("#UserPassword").val(data.UserPassword);
 
     });
 }
@@ -44,10 +44,20 @@ function Register() {
         }
     }).done(function (data) {
         if (data) {
-            $("#succMessage").removeClass("invisible").addClass("visible");
+            $("#succMessage").removeClass("hidden").addClass("alert alert-success");
         } else {
-            $("#errMessage").removeClass("invisible").addClass("visible");        }
-    });
+            $("#errMessage").removeClass("hidden").addClass("alert alert-warning");        }
+        }
+    );
+    document.getElementById("#personId").value = "";
+    document.getElementById("#FirstName").value = "";
+    document.getElementById("#LastName").value = "";
+    document.getElementById("#PlayerName").value = "";
+    document.getElementById("#Gender").value = "";
+    document.getElementById("#Age").value = "";
+    document.getElementById("#Phone").value = "";
+    document.getElementById("#Age").value = "";
+    document.getElementById("#UserPassword").value = "";
 }
 function Validate() {
     $.ajax(

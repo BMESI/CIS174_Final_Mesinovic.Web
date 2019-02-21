@@ -16,15 +16,7 @@
 <h2>Update Account</h2>
 
 <div class="row">
-    <div class="col-md-3">
-
-    </div>
-    <div class="col-md-7">
-        <input id="searchString" type="text" class="form-control" />
-        <div class="col-md-2">
-            <button class="btn-dark" onclick="searchAccount()">Search</button>
-        </div>
-    </div>
+  
 
     <div class="container">
         <div class="row">
@@ -38,7 +30,7 @@
                     <input id="PlayerName" placeholder="PlayerName" type="text" />
                 </div>
                 <div class="form-group col-md-12">
-                    <input id="Password" placeholder="Password" required type="text" />
+                    <input id="UserPassword" placeholder="Password" required type="text" />
                 </div>
                 <div class="form-group col-md-12">
                     <input id="FirstName" placeholder="First Name" required type="text" />
@@ -59,11 +51,11 @@
         </div>
     </div>
 </div>
-<div id="succMessage" class="text-hide alert alert-success">Update succ'd</div>
-<div id="errMessage" class="text-hide alert alert-danger">Update'nt</div>
+<div id="succMessage" class="hidden">Update succ'd</div>
+<div id="errMessage" class="hidden">Updaten't</div>
 <input id="personId" type="hidden" />
 <div class="col-md-2">
-    <button class="btn-dark" onclick="Register()">Update</button>
+    <button class="btn-dark" onclick="Register(); alert('Information updated');">Update</button>
 </div>
 <div class="col-md-2">
     <button class="btn-dark" type="reset">Clear</button>
