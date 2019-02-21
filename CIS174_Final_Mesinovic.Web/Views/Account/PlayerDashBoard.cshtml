@@ -21,7 +21,9 @@
     </div>
     <div class="col-md-7">
         <input id="searchString" type="text" class="form-control" />
-
+        <div class="col-md-2">
+            <button class="btn-dark" onclick="searchAccount()">Search</button>
+        </div>
     </div>
 
     <div class="container">
@@ -56,13 +58,13 @@
             </form>
         </div>
     </div>
-    <div class="col-md-2">
-        <button class="btn-dark" onclick="updateAccount()">Search</button>
-    </div>
 </div>
 <div id="succMessage" class="text-hide alert alert-success">Update succ'd</div>
 <div id="errMessage" class="text-hide alert alert-danger">Update'nt</div>
 <input id="personId" type="hidden" />
 <div class="col-md-2">
-    <button class="btn-dark" onclick="updateAccount()">Search</button>
+    <button class="btn-dark" onclick="Register()">Update</button>
+</div>
+<div class="col-md-2">
+    <button class="btn-dark" type="reset">Clear</button>
 </div>
