@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "LoggedIn";
+}
+
+<h2>LoggedIn</h2>
+@if (Session["Email"] != null)
+{
+    <h4> Hello @Session["FirstName"].ToString()</h4>
+}
+else
+{
+    <h4> </h4>
+
+}
+
+
+
+@model CIS174_Final_Mesinovic.Web.Models.UpdateAccountViewModel
+<script src="~/Scripts/ExtraScripts/Validator.js" type="text/javascript"></script>
+<h2>Update Account</h2>
+
+<div class="row">
+
+
+    <div class="container">
+        <div class="row">
+            <form style="margin:0 auto; padding:10px;">
+                <h2 class="form-signin-heading">Complete all fields</h2>
+                <div class="form-group col-md-12">
+                    <label for="Email" class="sr-only">Email address</label>
+                    <input id="Email" placeholder="" required type="text" />
+                </div>
+                <div class="form-group col-md-12">
+                    <input id="PlayerName" placeholder="@Html.ValueFor(m=>m.PlayerName)" required type="text" />
+                </div>
+                <div class="form-group col-md-12">
+                    <input id="UserPassword" placeholder="@Html.DisplayNameFor(m=>m.UserPassword)" required type="text" />
+                </div>
+                <div class="form-group col-md-12">
+                    <input id="FirstName" placeholder="@Html.ValueFor(m=>m.FirstName)" required type="text" />
+                </div>
+                <div class="form-group col-md-12">
+                    <input id="LastName" placeholder="@Html.DisplayNameFor(m=>m.LastName)" required type="text" />
+                </div>
+                <div class="form-group col-md-12">
+                    <input id="Age" placeholder="@Html.DisplayNameFor(m=>m.Age)" required type="text" />
+                </div>
+                <div class="form-group col-md-12">
+                    <input id="Gender" placeholder="@Html.DisplayNameFor(m=>m.Gender)" required type="text" />
+                </div>
+                <div class="form-group col-md-12">
+                    <input id="Phone" placeholder="@Html.DisplayNameFor(m=>m.Phone)" required type="text" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="succMessage" class="hidden">Update succ'd</div>
+<div id="errMessage" class="hidden">Updaten't</div>
+<input id="personId" type="hidden" />
+<div class="col-md-2">
+    <button class="btn-dark" onclick="Register(); alert('Information updated');">Update</button>
+</div>
+<div class="col-md-2">
+    <button class="btn-dark" type="reset">Clear</button>
+</div>

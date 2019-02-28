@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 // 2/16/19 -- added LoginViewmodel and props playername and userpassword
 namespace CIS174_Final_Mesinovic.Shared.ViewModels
 {
-    public  class LogInViewModel
+    public  class LoginViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Email Required.")]
         [EmailAddress]
         public string Email { get; set; }
-        [Required(ErrorMessage = "Required.")]
+        [Required(ErrorMessage = "Password Required.")]
         public string UserPassword { get; set; }
 
     }

@@ -8,7 +8,7 @@ namespace CIS174_Final_Mesinovic.Web.Controllers
 {
     public class PuzzlersController : Controller
     {
-        // GET: Puzzler
+        // GET: Puzzlers
         public ActionResult PuzzlersPage()
         {
             return View();

@@ -11,26 +11,26 @@ namespace CIS174_Final_Mesinovic.Shared.ViewModels
     public class RegisterViewModel
     {   [Key]
         public int PersonId { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Nickname Required.")]
         public string PlayerName { get; set; }
-        [Required]
+        [Required(ErrorMessage = "First name Required.")]
         public string FirstName { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Last name Required.")]
         public string LastName { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Age (number) Required.")]
         public int? Age { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Gender Required.")]
         public string Gender { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Email Required.")]
         public string Email { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Phone Required.")]
         public int Phone { get; set; }
         [Required]
         [DataType(DataType.Password)]
-        public string UserPassword { get; set; }
+        public string Password { get; set; }
         [DataType(DataType.Password)]
         [Compare("UserPassword", ErrorMessage ="Passwords do not match.")]
-        public string ConfirmUserPassword { get; set; }
+        public string ConfirmPassword { get; set; }
 
     }
 }

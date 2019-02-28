@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "ErrorGenerator";
+}
+
+<h2>Error Generator Page</h2>
+<p>
+    You must also have a page named "Error Generator" which includes :
+    a single button with text "Generate Error" which when clicked will cause a "System out of memory exception" on purpose
+
+    This will cause the custom error page to display
+    This will cause a record to be created in the errorlog table
+</p>
+
+
+
+<form action="@Url.Action("ErrorAction", "Error")"> <input type="submit" value="Generate Error" /> </form>

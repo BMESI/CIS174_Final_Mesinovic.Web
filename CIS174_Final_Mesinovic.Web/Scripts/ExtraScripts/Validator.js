@@ -23,10 +23,10 @@ function Register() {
     var firstName = $("#FirstName").val();
     var lastName = $("#LastName").val();
     var age = $("#Age").val();
-    var gender  = $("#Gender").val();
+    var gender = $("#Gender").val();
     var email = $("#Email").val();
     var playerName = $("#PlayerName").val();
-    var phone   = $("#Phone").val();
+    var phone = $("#Phone").val();
     var password = $("#UserPassword").val();
 
     $.ajax({
@@ -46,8 +46,9 @@ function Register() {
         if (data) {
             $("#succMessage").removeClass("hidden").addClass("alert alert-success");
         } else {
-            $("#errMessage").removeClass("hidden").addClass("alert alert-warning");        }
+            $("#errMessage").removeClass("hidden").addClass("alert alert-warning");
         }
+    }
     );
     document.getElementById("#personId").value = "";
     document.getElementById("#FirstName").value = "";
@@ -58,6 +59,11 @@ function Register() {
     document.getElementById("#Phone").value = "";
     document.getElementById("#Age").value = "";
     document.getElementById("#UserPassword").value = "";
+    $("#regbutton").click(function () {
+        $(this).closest('form').find("input[type=text], textarea").val("");
+    });
+
+
 }
 function Validate() {
     $.ajax(

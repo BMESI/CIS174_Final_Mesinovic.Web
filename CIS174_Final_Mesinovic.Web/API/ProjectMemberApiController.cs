@@ -13,18 +13,18 @@ namespace CIS174_Final_Mesinovic.Web.API
     public class ProjectMemberApiController : ApiController
     {
 
-            private readonly Shared.Orchestrators.ProjectMemberOrchestrator _projectmemberorchestrator;
-            public ProjectMemberApiController()
-            {
-                _projectmemberorchestrator = new ProjectMemberOrchestrator();
-            }
-            [HttpGet]
-            public List<ProjectMemberViewModel> GetAllMembers()
-            {
+        private readonly Shared.Orchestrators.ProjectMemberOrchestrator _projectmemberorchestrator;
+        public ProjectMemberApiController()
+        {
+            _projectmemberorchestrator = new ProjectMemberOrchestrator();
+        }
+        [HttpGet]
+        public List<ProjectMemberViewModel> GetAllMembers()
+        {
             // members == 
-                var ProjectMembers = _projectmemberorchestrator.GetAllMembers();
-                return ProjectMembers.ToList();
-            }
+            var ProjectMembers = _projectmemberorchestrator.GetAllMembers();
+            return ProjectMembers.ToList();
+        }
 
     }
 }

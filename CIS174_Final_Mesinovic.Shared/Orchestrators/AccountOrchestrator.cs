@@ -32,7 +32,7 @@ namespace CIS174_Final_Mesinovic.Shared.Orchestrators
                 Email = player.Email,
                 Phone = player.Phone,
                 PlayerName = player.PlayerName,
-                UserPassword = player.UserPassword,
+                Password = player.Password,
 
             });
             return await _schoolContext.SaveChangesAsync();
@@ -50,7 +50,7 @@ namespace CIS174_Final_Mesinovic.Shared.Orchestrators
                 Email = m.Email,
                 Phone = m.Phone,
                 PlayerName = m.PlayerName,
-                UserPassword = m.UserPassword
+                Password = m.Password
             }).ToList();
             return player;
         }
@@ -68,7 +68,7 @@ namespace CIS174_Final_Mesinovic.Shared.Orchestrators
             updateEnt.Email = player.Email;
             updateEnt.Age = player.Age;
             updateEnt.Phone = player.Phone;
-            updateEnt.UserPassword = player.UserPassword;
+            updateEnt.Password = player.Password;
             updateEnt.PlayerName = player.PlayerName;
             await _schoolContext.SaveChangesAsync();
             return true;
@@ -91,16 +91,16 @@ namespace CIS174_Final_Mesinovic.Shared.Orchestrators
                 Phone = player.Phone,
                 PlayerName = player.PlayerName,
                 Email = player.Email,
-                UserPassword = player.UserPassword
+                Password = player.Password
             };
             return viewmodel;
         }
 
-        public  async Task<bool> LogIn(AccountViewModel player)
+        public  async Task<bool> Login(AccountViewModel player)
         {
             //   var _admin =  await _schoolContext.Player.Where(x => x.Email == player.Email).ToList();
             //  var pss = await _schoolContext.Player.SingleOrDefault(x => x.UserPassword == player.UserPassword);
-            var obj = _schoolContext.Player.Where(a => a.Email.Equals(player.Email) && a.UserPassword.Equals(player.UserPassword)).FirstOrDefault();
+            var obj = _schoolContext.Player.Where(a => a.Email.Equals(player.Email) && a.Password.Equals(player.Password)).FirstOrDefault();
             //var email  = _schoolContext.Player.Where(x => x.Email == player.Email).ToList();
             //var pss = _schoolContext.Player.SingleOrDefault(x => x.UserPassword == player.UserPassword);
             if (obj.ToString() == player.ToString() )
@@ -113,9 +113,9 @@ namespace CIS174_Final_Mesinovic.Shared.Orchestrators
             }
         }
 
-        public async Task<bool> LogInAccount(AccountViewModel player)
+        public bool Login_1(AccountViewModel player)
         {
-            var obj = _schoolContext.Player.Where(a => a.Email.Equals(player.Email) && a.UserPassword.Equals(player.UserPassword)).FirstOrDefault();
+            var obj = _schoolContext.Player.Where(a => a.Email.Equals(player.Email) && a.Password.Equals(player.Password)).FirstOrDefault();
             //var email  = _schoolContext.Player.Where(x => x.Email == player.Email).ToList();
             //var pss = _schoolContext.Player.SingleOrDefault(x => x.UserPassword == player.UserPassword);
             if (obj.ToString() == player.ToString())
@@ -127,6 +127,8 @@ namespace CIS174_Final_Mesinovic.Shared.Orchestrators
                 return false;
             }
         }
+
+     
     }
 }
     

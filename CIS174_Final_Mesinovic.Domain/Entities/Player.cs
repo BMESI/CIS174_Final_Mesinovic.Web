@@ -18,7 +18,7 @@ namespace CIS174_Final_Mesinovic.Domain.Entities
         public string Gender { get; set; }
         public string Email { get; set; }
         public int Phone { get; set; }
-        public string UserPassword { get; set; }
+        public string Password { get; set; }
       //  public string ConfirmUserPassword { get; set; }
 
     }

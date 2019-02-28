@@ -12,7 +12,7 @@ namespace CIS174_Final_Mesinovic.Shared.Orchestrators.Interfaces
          Task<int> RegisterAccount(AccountViewModel player);
         Task<bool> UpdateAccount(AccountViewModel player);
         Task<AccountViewModel> SearchAccount(string searchstring);
-        Task<bool> LogInAccount(AccountViewModel player);
+        Task<bool> Login(AccountViewModel player);
 
         //   Task<PlayerViewModel> SearchPlayer(PlayerViewModel player);
 

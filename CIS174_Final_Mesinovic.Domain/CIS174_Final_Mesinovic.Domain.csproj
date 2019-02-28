@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\ErrorLog.cs" />
     <Compile Include="Entities\HighScore.cs" />
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Entities\Player.cs" />
@@ -59,6 +60,18 @@
     <Compile Include="Migrations\201902202358230_week6.cs" />
     <Compile Include="Migrations\201902202358230_week6.Designer.cs">
       <DependentUpon>201902202358230_week6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902270049332_err_migraton.cs" />
+    <Compile Include="Migrations\201902270049332_err_migraton.Designer.cs">
+      <DependentUpon>201902270049332_err_migraton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902270106532_err_migr2.cs" />
+    <Compile Include="Migrations\201902270106532_err_migr2.Designer.cs">
+      <DependentUpon>201902270106532_err_migr2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902280429185_fix_migration.cs" />
+    <Compile Include="Migrations\201902280429185_fix_migration.Designer.cs">
+      <DependentUpon>201902280429185_fix_migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,6 +87,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902202358230_week6.resx">
       <DependentUpon>201902202358230_week6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902270049332_err_migraton.resx">
+      <DependentUpon>201902270049332_err_migraton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902270106532_err_migr2.resx">
+      <DependentUpon>201902270106532_err_migr2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902280429185_fix_migration.resx">
+      <DependentUpon>201902280429185_fix_migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

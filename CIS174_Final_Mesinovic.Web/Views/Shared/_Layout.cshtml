@@ -16,18 +16,10 @@
                 <li class="navbar-item active">
                     <a class="nav-link" href="@Url.Action("Index","Home")">Home</a>
                 </li>
-                <li class="navbar-item active">
-                    <a class="nav-link" href="@Url.Action("ViewAllStudents","Student")">View all students</a>
-                </li>
-                <li class="navbar-item active">
-                    <a class="nav-link" href="@Url.Action("LogInAccount","Account")">Log In</a>
-                </li>
-                <li class="navbar-item active">
-                    <a class="nav-link" href="@Url.Action("Register","Account")">Register</a>
-                </li>
+ 
 
                 <li class="nav-item active">
-                    <a class="nav-link" href="@Url.Action("ViewScores","Leaderboards")"> Leaderboards </a>
+                    <a class="nav-link" href="@Url.Action("ErrorPage","Error")"> Error Generator </a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -38,10 +30,13 @@
                         <a class="dropdown-item" href="@Url.Action("PuzzlersPage","Puzzlers")">Puzzlers</a>
                     </div>
                 </li>
-
                 <li class="navbar-item active">
                     <a class="nav-link" href="@Url.Action("AboutPage","About")">About Us</a>
                 </li>
+                <li>
+                    @Html.Partial("_LoginPartial")
+                </li>
+
             </ul>
         </div>
     </nav>
