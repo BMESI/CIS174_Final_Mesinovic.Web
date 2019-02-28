@@ -64,6 +64,7 @@ namespace CIS174_Final_Mesinovic.Web.Models
 
     public class RegisterViewModel
     {
+
         public int PersonId { get; set; }
         [Required]
         [Display(Name = "Nickname")]

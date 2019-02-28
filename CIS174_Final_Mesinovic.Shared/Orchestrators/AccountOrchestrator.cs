@@ -21,20 +21,33 @@ namespace CIS174_Final_Mesinovic.Shared.Orchestrators
         }
         public async Task<int> RegisterAccount(AccountViewModel player)
         {
-            _schoolContext.Player.Add(new Domain.Entities.Player
+            try
             {
+                _schoolContext.Player.Add(new Domain.Entities.Player
+                {
 
-                PersonId = player.PersonId,
-                FirstName = player.FirstName,
-                LastName = player.LastName,
-                Age = player.Age,
-                Gender = player.Gender,
-                Email = player.Email,
-                Phone = player.Phone,
-                PlayerName = player.PlayerName,
-                Password = player.Password,
+                    PersonId = player.PersonId,
+                    FirstName = player.FirstName,
+                    LastName = player.LastName,
+                    Age = player.Age,
+                    Gender = player.Gender,
+                    Email = player.Email,
+                    Phone = player.Phone,
+                    PlayerName = player.PlayerName,
+                    Password = player.Password,
 
-            });
+                });
+            }
+            catch (Exception ome)
+            {
+                ErrorOrchestrator errorOrchestrator = new ErrorOrchestrator(ome);
+                ErrorViewModel errorview = new ErrorViewModel();
+                errorview.ErrorMessage = ome.Message;
+                //  errorview.InnerExceptions = ome.InnerException.ToString();
+                errorview.StackTrace = ome.StackTrace;
+            }
+
+
             return await _schoolContext.SaveChangesAsync();
         }
         public List<AccountViewModel> GetPlayer()
@@ -57,20 +70,32 @@ namespace CIS174_Final_Mesinovic.Shared.Orchestrators
 
         public async Task<bool> UpdateAccount(AccountViewModel player)
         {
-            var updateEnt = await _schoolContext.Player.FindAsync(player.PersonId);
-            if (updateEnt == null)
+            try
             {
-                return false;
+                var updateEnt = await _schoolContext.Player.FindAsync(player.PersonId);
+                if (updateEnt == null)
+                {
+                    return false;
+                }
+                updateEnt.FirstName = player.FirstName;
+                updateEnt.LastName = player.LastName;
+                updateEnt.Gender = player.Gender;
+                updateEnt.Email = player.Email;
+                updateEnt.Age = player.Age;
+                updateEnt.Phone = player.Phone;
+                updateEnt.Password = player.Password;
+                updateEnt.PlayerName = player.PlayerName;
+                await _schoolContext.SaveChangesAsync();
+
             }
-            updateEnt.FirstName = player.FirstName;
-            updateEnt.LastName = player.LastName;
-            updateEnt.Gender = player.Gender;
-            updateEnt.Email = player.Email;
-            updateEnt.Age = player.Age;
-            updateEnt.Phone = player.Phone;
-            updateEnt.Password = player.Password;
-            updateEnt.PlayerName = player.PlayerName;
-            await _schoolContext.SaveChangesAsync();
+            catch (Exception ome)
+            {
+                ErrorOrchestrator errorOrchestrator = new ErrorOrchestrator(ome);
+                ErrorViewModel errorview = new ErrorViewModel();
+                errorview.ErrorMessage = ome.Message;
+                //  errorview.InnerExceptions = ome.InnerException.ToString();
+                errorview.StackTrace = ome.StackTrace;
+            }
             return true;
         }
 
