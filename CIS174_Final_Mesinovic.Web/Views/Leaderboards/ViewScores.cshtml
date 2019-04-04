@@ -1,7 +1,35 @@
-﻿
+﻿@model CIS174_Final_Mesinovic.Web.Models.LeaderboardsViewModel
 @{
     ViewBag.Title = "ViewScores";
 }
 
 <h2>ViewScores</h2>
 
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+      
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var scores in Model.Scores)
+            {
+            <tr>
+                <td>
+                    @scores.HighScoreId
+                </td>
+                <td>
+                    @scores.PersonId
+                </td>
+                <td>
+                    @scores.Score
+                </td>
+                <td>
+                    @scores.DateAttained
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

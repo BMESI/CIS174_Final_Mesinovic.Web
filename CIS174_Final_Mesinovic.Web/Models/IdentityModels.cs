@@ -1,5 +1,4 @@
-﻿using System.Data.Entity;
-using System.Security.Claims;
+﻿using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -24,6 +23,7 @@ namespace CIS174_Final_Mesinovic.Web.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+        //public DbSet<ErrorLog> Error { get; set; }
 
         public static ApplicationDbContext Create()
         {

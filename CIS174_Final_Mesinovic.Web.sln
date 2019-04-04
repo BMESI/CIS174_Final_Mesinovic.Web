@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CIS174_Final_Mesinovic.Shar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CIS174_Final_Mesinovic.Web", "CIS174_Final_Mesinovic.Web\CIS174_Final_Mesinovic.Web.csproj", "{8B9AF099-B4A8-4608-A961-510317E200F7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CIS174_Final_Mesinovic.Test", "CIS174_Final_Mesinovic.Test\CIS174_Final_Mesinovic.Test.csproj", "{AA7DA4C1-AC54-4A44-A500-824D327A63CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{8B9AF099-B4A8-4608-A961-510317E200F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B9AF099-B4A8-4608-A961-510317E200F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B9AF099-B4A8-4608-A961-510317E200F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA7DA4C1-AC54-4A44-A500-824D327A63CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA7DA4C1-AC54-4A44-A500-824D327A63CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA7DA4C1-AC54-4A44-A500-824D327A63CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA7DA4C1-AC54-4A44-A500-824D327A63CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

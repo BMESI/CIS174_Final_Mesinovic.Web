@@ -7,13 +7,13 @@ namespace CIS174_Final_Mesinovic.Domain.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class err_migraton : IMigrationMetadata
+    public sealed partial class a : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(err_migraton));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(a));
         
         string IMigrationMetadata.Id
         {
-            get { return "201902270049332_err_migraton"; }
+            get { return "201902280704031_a"; }
         }
         
         string IMigrationMetadata.Source

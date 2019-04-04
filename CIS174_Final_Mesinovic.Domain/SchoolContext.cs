@@ -17,7 +17,18 @@ namespace CIS174_Final_Mesinovic.Domain
         // add: player Dbset 2/14 
         public DbSet<Player> Player { get; set; }
         public DbSet<ErrorLog> Error { get; set; }
+        // trying to use a list of highscores instead of dbset 
+        //
+        public List<HighScore> LeaderboardTestList { get; set; }
+    //   public DbSet<ApplicationUser> ApplicationUser        { get; set; }
 
+}
+   /* public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    {
+        public ApplicationDbContext()
+            : base("DefaultConnection", throwIfV1Schema: false)
+        {
+        }
+    }*/
 
     }
-}
